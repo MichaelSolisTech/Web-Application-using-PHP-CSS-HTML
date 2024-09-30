@@ -1,0 +1,53 @@
+table{
+    width: 700px;
+    margin: auto;
+    border: 1px solid #080808;
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: Arial;
+}
+caption {
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+thead {
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+}
+
+th{
+    padding: 20px;
+    border: 1px solid #080808;
+    color: #fff;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #080808;
+    color: #fff;
+}
+
+tbody tr{
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+    border: 1px solid #080808;
+ 
+}
+
+tfoot td{
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+}
+
+caption:hover,th:hover, td:hover{
+    background: orange;
+}
+
+tfoot tr {
+    height: 115px;
+}
+
