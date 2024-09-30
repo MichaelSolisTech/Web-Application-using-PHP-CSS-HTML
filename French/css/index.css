@@ -1,0 +1,540 @@
+* {
+      box-sizing: border-box;
+      margin: 0%;
+      padding: 0%;
+      font-family: "Darker Grotesque";
+}
+
+/*Redes sociales*/
+
+.social{
+      position: fixed;
+      top: 35%;
+      right: 0;
+      font-size: 1.5rem;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      z-index: 100;
+  }
+  
+  .icon{
+      color: white;
+      text-decoration: none;
+      padding: .7rem;
+      display: flex;
+      transition: all .5s;
+  }
+  
+  .icon-facebook2{
+      background: #2e406e;
+  }
+  
+  .icon-youtube{
+      background: #e83028;
+  }
+  
+  .icon-twitter{
+      background: #339dc5;
+  }
+  
+  .icon-instagram{
+      background: #E1306C;
+  }
+  
+  .icon:first-child{
+      border-radius: 1rem 0 0 0;
+  }
+  
+  .icon:last-child{
+      border-radius: 0 0 0 1rem;
+  }
+  
+  .icon:hover{
+      padding-right: 3rem;
+      border-radius: 1rem 0 0 1rem;
+      box-shadow: 0 0 .5rem rgba(0, 0, 0, .42);
+      text-decoration: none;
+      color: white;
+  }
+
+/*--------------- Video --------------- */
+
+.video-container {
+      position: absolute;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+}
+
+video {
+      object-fit: cover;
+      width: 100vw;
+      height: 100vh;
+      position: absolute;
+      top: 0;
+      left: 0;
+}
+
+.video-container::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100vh;
+      background: #1b1b1b;
+      opacity: 0.6;
+}
+
+.header {
+      position: absolute;
+      top: 50%;
+      left: 45%;
+      transform: translate(-50%, -50%);
+}
+
+.header h1 {
+      color: #ffe341;
+      font-size: 80px !important;
+}
+
+@media(max-width: 900px) {
+      .header {
+            left: 50%;
+      }
+
+      .header h1 {
+            font-size: 34px !important;
+            text-align: center;
+      }
+}
+
+/*--------------- navigation --------------- */
+
+.nav {
+      width: 100%;
+      height: 80px;
+      position: fixed;
+      z-index: 2;
+}
+
+.nav.scrolled {
+      background-color: #161616 !important;
+      transition: background-color 500ms linear;
+}
+
+.nav #brand {
+      float: left;
+      display: block;
+      margin-left: 40px;
+      line-height: 80px;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 18px;
+}
+
+.nav #brand a {
+      color: #fff;
+      font-family: Poppins !important;
+      transition: all 500ms ease-out;
+}
+
+.nav #brand a:hover {
+      text-decoration: none;
+}
+
+.nav #menu {
+      float: left;
+      right: 40px;
+      position: fixed;
+}
+
+.nav #menu li {
+      padding-left: 40px;
+      display: inline-block;
+      font-weight: lighter !important;
+      text-transform: uppercase;
+      font-size: 14px;
+      line-height: 80px;
+      position: relative;
+      transition: all 500ms ease-out;
+}
+
+.nav #menu li a {
+      font-family: Poppins !important;
+      color: #ddd;
+      transition: all 500ms ease-out;
+}
+
+.nav #menu li a:hover {
+      text-decoration: none;
+      color: #fff;
+      text-decoration: underline;
+      transition: all 500ms ease-out;
+}
+
+#toggle {
+      position: absolute;
+      right: 40px;
+      top: 20px;
+      font-weight: 300;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      z-index: 2;
+      width: 30px;
+      height: 30px;
+      float: right;
+      transition: all 0.3s ease-out;
+      visibility: hidden;
+      opacity: 0;
+}
+
+.close-btn {
+      position: absolute;
+      right: 30px;
+      font-weight: 300;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      z-index: 2;
+      top: -2px;
+      line-height: 80px;
+}
+
+#resize {
+      z-index: 2;
+      top: 0px;
+      position: fixed;
+      background: #0f0f0f;
+      width: 100%;
+      height: 100%;
+      visibility: hidden;
+      opacity: 0;
+      transition: all 1s ease-out;
+}
+
+#resize #menu {
+      height: 90px;
+      position: absolute;
+      left: 45%;
+      transform: translateX(-40%);
+      text-align: center;
+      display: table-cell;
+      vertical-align: center;
+}
+
+#resize #menu li {
+      display: block;
+      text-align: center;
+      padding: 10px 0;
+      font-size: 50px;
+      text-transform: uppercase;
+      min-height: 50px;
+      font-weight: bold;
+      transition: all 0.3s ease-out;
+}
+
+#resize li:nth-child(1) {
+      margin-top: 140px;
+}
+
+#resize #menu li a {
+      color: #fff;
+}
+
+#resize #menu li a:hover {
+      text-decoration: none;
+}
+
+#resize.active {
+      visibility: visible;
+      opacity: 1;
+}
+
+@media(max-width: 900px) {
+      #toggle {
+            visibility: visible;
+            opacity: 1;
+            margin-top: 6px;
+            margin-right: 4px;
+      }
+
+      nav #brand {
+            margin-left: 10px;
+      }
+
+      #resize ul li a {
+            font-size: 15px;
+            font-family: "Poppins" !important;
+            font-weight: lighter !important;
+            color: rgb(156, 156, 156) !important;
+            transition: all 500ms ease-out;
+      }
+
+      nav #menu {
+            display: none;
+      }
+}
+
+@media(min-width: 900px) {
+      #resize {
+            visibility: hidden !important;
+      }
+}
+
+/*--------------- videos, texto y links  --------------- */
+
+.content {
+      position: absolute;
+      margin-top: 100vh;
+      width: 100%;
+}
+
+.main{
+      width: 100%;
+      height: 300px;
+      position: relative;
+      overflow: hidden;
+  }
+  
+  .main .articulo1{
+      width: 70%;
+      position: relative;
+      left: 350px;
+      bottom: -44px;
+      padding-top: 0px;
+      padding-bottom: 180px;
+      height: 170px;
+      border: 4px solid rgb(255, 123, 0) ;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+  
+  .main .info1 .articulo1{
+      width: 40%;
+      margin-left: -315px;
+      line-height: 23px;
+      font-size: 20px;
+      text-align: justify;
+  }
+
+  .main .info1 .articulo1 p{
+        margin-top: -15px;
+  }
+  
+  .main .info1 .articulo1 h2{
+      text-align: center;
+      font-size: 30px;
+      font-family: 'Times New Roman', Times, serif;
+      padding-bottom: 16px;
+  }
+  
+.main .info1 iframe {
+      width: 350px;
+      height: 180px;
+      margin-left: 620px;
+      border: 4px solid rgb(255, 123, 0);
+      position: static;
+      margin-bottom: -22px;
+  }
+  
+ .main iframe {
+      width: 350px;
+      height: 180px;
+      margin-left: 1000px;
+      border: 4px solid rgb(255, 123, 0);
+      margin-top: -1200px;
+      position: static;
+      margin-bottom: 2px;
+  }
+
+ .boton1{
+      width: 15%;
+      height: 45px;
+      background-color: rgb(255, 175, 110);
+      cursor: pointer;
+      transition: background-color 1s;
+      text-align: center;
+      border: 4px solid rgb(255, 123, 0) ;
+      border-radius: 0.6rem;
+      margin-left: 695px;
+  }
+  
+ .boton1:hover{
+      background-color: rgb(255, 123, 0);
+  }
+
+  .boton1 a{
+      color: black;
+  }
+  
+.boton1{
+      text-align: center;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: bold;
+      line-height: 1.9em;
+      font-size: larger;
+  }
+
+.boton2{
+      width: 15%;
+      height: 45px;
+      background-color: rgb(255, 175, 110);
+      cursor: pointer;
+      transition: background-color 1s;
+      text-align: center;
+      border: 4px solid rgb(255, 123, 0);
+      border-radius: 0.6rem;
+      margin-left: 1070px;
+      margin-top: -45px;
+  }
+  
+.boton2:hover{
+      background-color: rgb(255, 123, 0);
+  }
+
+.boton2 a{
+      color: black;
+  }
+  
+.boton2{
+      text-align: center;
+      font-size: 20px;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      font-weight: bold;
+      line-height: 1.9em;
+      font-size: larger;
+  }
+
+/*------------- TABLA ---------------*/
+
+.tabla h1{
+      font-size:  30px;
+      text-shadow: 0px 1.5px rgb(255, 123, 0);
+      text-align: center;
+      font-family: Georgia, 'Times New Roman', Times, serif;
+      background: rgba(255, 255, 255, 0.562);
+      padding: 10px 0;
+}
+table{
+    width: 900px;
+    margin: auto;
+    border: 1px solid #080808;
+    border-collapse: collapse;
+    font-size: 16px;
+    font-family: Arial;
+}
+
+.tabla{
+    margin-bottom: 20px;
+    background: url(../img/tablaex.png);
+}
+caption {
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+    color: #fff;
+    padding: 20px;
+}
+
+thead {
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+}
+
+thead tr th{
+      text-align: center;
+}
+
+th{
+    padding: 20px;
+    border: 1px solid #080808;
+    color: #fff;
+}
+
+td {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #080808;
+    color: #fff;
+}
+
+tbody tr{
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+    border: 1px solid #080808;
+ 
+}
+
+tfoot td{
+    background: linear-gradient(top, #3c3c3c 0%, #222 100%);
+    background: -webkit-linear-gradient(top, #3c3c3c 0%, #222 100%);
+}
+
+caption:hover,th:hover, td:hover{
+    background: rgb(255, 123, 0);
+}
+
+tfoot tr {
+    height: 115px;
+}
+
+/*--------------- TEAM --------------- */
+
+.slider{
+      width: 100%;
+      /*background: #000;*/
+      margin: auto; /* centra el bloque*/
+      overflow: hidden; /* quita márgenes de la imagen arriba y abajo*/
+
+  }
+  
+  .slider ul {
+      padding: 0; /* quita espacio a los lados*/
+      display: flex; /* pone imagen alado de otra*/
+      width: 400%; /* ancho */
+      animation: transicion 23s infinite;
+      animation-direction: alternate;
+  }
+  
+  .slider li {
+      list-style: none; /* quita viñetas*/
+      width: 100%;
+  }
+  
+  .slider img{
+      width: 100%; /* ancho de la imagen*/
+      height: 710px;
+      border: 4px solid rgb(255, 123, 0);
+
+  }
+   /* animaciones*/
+  @keyframes transicion{
+      0%{margin-left: 0;}
+      20%{margin-left: 0;}
+  
+      25%{margin-left: -100%;}
+      45%{margin-left: -100%;}
+  
+      50%{margin-left: -200%;}
+      70%{margin-left: -200%;}
+  
+      75%{margin-left: -300%;}
+      100%{margin-left: -300%;}
+  
+  }  
+
+
+/*--------------- footer empieza aquí --------------- */
+
+footer {
+      padding: 25px;
+      background: url(../img/noita-digital-QZX8jbK1xEw.jpg);
+      text-align: center;
+      color: white;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+      font-size: 32px;
+  }
